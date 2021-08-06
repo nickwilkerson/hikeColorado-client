@@ -12,6 +12,17 @@ const logHike = function (data) {
   })
 }
 
+const viewHike = function () {
+  return $.ajax({
+    url: config.apiUrl + '/hike',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.token
+    }
+  })
+}
+
 module.exports = {
-  logHike
+  logHike,
+  viewHike
 }

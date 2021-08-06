@@ -12,6 +12,15 @@ const logHike = function (event) {
     .catch(ui.onFailure) // handle failure api call
 }
 
+const viewHike = function (event) {
+  event.preventDefault()
+
+  api.viewHike()
+    .then(ui.viewHikeSuccess)
+    .catch(ui.onFailure)
+}
+
 module.exports = {
-  logHike
+  logHike,
+  viewHike
 }

@@ -7,4 +7,5 @@ $(() => {
   $('#sign-out').on('click', authEvents.signOut)
   $('#change-password').on('submit', authEvents.changePassword)
   $('#log-hike').on('submit', hikeEvents.logHike)
+  $('#view-hikes').on('click', hikeEvents.viewHike)
 })
