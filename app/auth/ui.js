@@ -16,6 +16,10 @@ const onSignOutSuccess = function () {
   $('#message').text('Signed out ghostrider.')
 }
 
+const changePasswordSuccess = function () {
+  $('#message').text('Successful password change.')
+}
+
 const onFailure = function () {
   $('#message').text('Houston, we have a problem.')
 }
@@ -24,5 +28,6 @@ module.exports = {
   onSignUpSuccess,
   onSignInSuccess,
   onSignOutSuccess,
+  changePasswordSuccess,
   onFailure
 }
