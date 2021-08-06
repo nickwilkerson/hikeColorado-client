@@ -8,6 +8,7 @@ const logHikeSuccess = function (response) {
 
 const viewHikeSuccess = function (data) {
   const hikes = data.hike
+  
   let hikesHtml = ''
   hikes.forEach(hike => {
     hikesHtml += `
