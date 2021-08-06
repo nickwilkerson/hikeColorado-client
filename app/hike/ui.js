@@ -7,8 +7,17 @@ const logHikeSuccess = function (response) {
 }
 
 const viewHikeSuccess = function (data) {
-  console.log('view hike path success', data.hike)
+  const hikes = data.hike
+  let hikesHtml = ''
+  hikes.forEach(hike => {
+    hikesHtml += `
+      <h6>Name: ${hike.name}</h6>
+      <h6>Location: ${hike.location}</h6>
+    `
+  })
+  $('#hikesHtml').html(hikesHtml)
 }
+
 const onFailure = function () {
   $('#message').text('Houston, we have a problem.')
 }
