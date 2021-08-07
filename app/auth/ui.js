@@ -8,12 +8,24 @@ const onSignUpSuccess = function (response) {
 const onSignInSuccess = function (response) {
   store.token = response.user.token
   console.log('You have successfully signed in, and here is your token:', store.token)
-  $('#message').text(`You're officially signed in ${response.user.email}!`)
+  $('#message').text(`signed in ${response.user.email}!`)
   $('#sign-in').trigger('reset')
+  $('#log-hike').show()
+  $('#change-password').show()
+  $('#sign-out').show()
+  $('#view-hikes').show()
+  $('#sign-in').hide()
+  $('#sign-up').hide()
 }
 
 const onSignOutSuccess = function () {
-  $('#message').text('Signed out ghostrider.')
+  $('#message').text('Signed out.')
+  $('#log-hike').hide()
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#view-hikes').hide()
+  $('#sign-in').show()
+  $('#sign-up').show()
 }
 
 const changePasswordSuccess = function () {
