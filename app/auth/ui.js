@@ -6,8 +6,8 @@ const onSignUpSuccess = function (response) {
 }
 
 const onSignInSuccess = function (response) {
-  store.token = response.user.token
-  console.log('You have successfully signed in, and here is your token:', store.token)
+  store.user = response.user
+  console.log('You have successfully signed in, and here is your token:', store.user)
   $('#message').text(`signed in ${response.user.email}!`)
   $('#sign-in').trigger('reset')
   $('#log-hike').show()
@@ -26,10 +26,12 @@ const onSignOutSuccess = function () {
   $('#view-hikes').hide()
   $('#sign-in').show()
   $('#sign-up').show()
+  $('#hikesHtml').hide()
 }
 
 const changePasswordSuccess = function () {
   $('#message').text('Successful password change.')
+  $('#change-password').trigger('reset')
 }
 
 const onFailure = function () {

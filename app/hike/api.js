@@ -7,7 +7,7 @@ const logHike = function (data) {
     url: config.apiUrl + '/hike',
     method: 'POST',
     headers: {
-      Authorization: 'Bearer ' + store.token
+      Authorization: 'Bearer ' + store.user.token
     },
     data: data
   })
@@ -18,7 +18,7 @@ const viewHike = function () {
     url: config.apiUrl + '/hike',
     method: 'GET',
     headers: {
-      Authorization: 'Bearer ' + store.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }
@@ -28,13 +28,25 @@ const deleteHike = function (id) {
     url: config.apiUrl + '/hike/' + id,
     method: 'DELETE',
     headers: {
-      Authorization: 'Bearer ' + store.token
+      Authorization: 'Bearer ' + store.user.token
     }
+  })
+}
+
+const editHike = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/hike/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: id
   })
 }
 
 module.exports = {
   logHike,
   viewHike,
-  deleteHike
+  deleteHike,
+  editHike
 }

@@ -17,17 +17,20 @@
 
       <!-- Sign Up Start -->
 
-
+      <div id="sign-up-element">
         <form id="sign-up">
-          <h3>Sign Up</h3>
-          <label>Email:</label>
+          <h2 id="sign-up-header">Sign Up</h2>
+          <label class="input">Email:</label>
           <input name="credentials[email]" type="email">
-          <label>Password:</label>
+          <label class="input">Password:</label>
           <input name="credentials[password]" type="password">
-          <label>Password Confirmation:</label>
+          <label class="input">Password Confirmation:</label>
           <input name="credentials[password_confirmation]" type="password">
-          <input type="submit" value="Sign Up">
+          <input type="submit" value="Sign Up" id="sign-up-button" class="input">
+
         </form>
+        <!-- <button id="already-user" class="input" type="button">Already a User?</button> -->
+      </div>
 
       <!-- Sign Up End -->
 
@@ -72,14 +75,10 @@
         <button id="sign-out" type="button">Sign Out</button>
         <button id="view-hikes" type="button">View Hikes</button>
 
-        <!-- <h3>Delete Hike</h3>
-        <form id="delete-hike">
-          <label>name:</label>
-          <input name="hike[name]" type="text" placeholder="Enter Hike Name">
-          <input type="submit" value="Delete Hike">
-        </form> -->
-
         <div id="hikesHtml"></div>
+        <div id="editHike"></div>
+        <!-- meh -->
+
 
     </body>
 </html>
