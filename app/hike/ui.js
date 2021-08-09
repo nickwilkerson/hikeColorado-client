@@ -12,7 +12,6 @@ const viewHikeSuccess = function (data) {
 
   store.view.forEach(hike => {
     if (store.user._id === hike.owner) {
-      console.log(store.user._id, '=', hike.owner)
       hikesHtml += `
       <h6>Name: ${hike.name}</h6>
       <h6>Location: ${hike.location}</h6>
@@ -22,16 +21,13 @@ const viewHikeSuccess = function (data) {
     }
   })
   $('#hikesHtml').html(hikesHtml)
-  console.log('hike ids: ', store.view)
 }
 
 const deleteHikeSuccess = function (data) {
   $('#message').text('Hike Deleted.')
-  console.log('deleted.')
 }
 
 const showHikeSuccess = function (data) {
-  console.log('show hike success call')
   const showSingleHike = `
     <form id="edit-hike">
       <h3>${data.hike.name}</h3>
@@ -49,7 +45,6 @@ const showHikeSuccess = function (data) {
 }
 
 const editHikeSuccess = function (data) {
-  console.log('edit hike reached the UI success call')
   $('#edit-hike').trigger('reset')
   $('#showSingleHike').hide()
   $('#hikesHtml').show()

@@ -1,8 +1,8 @@
-const { onFailure } = require('../auth/ui')
 const getFormFields = require('./../../lib/get-form-fields') // get FormFields
 const api = require('./api') // access the api
 const ui = require('./ui') // access the ui
 const store = require('./../store')
+const { changePassword } = require('../auth/api')
 
 const logHike = function (event) {
   event.preventDefault() // prevents webpage from refreshing when button is clicked
@@ -16,7 +16,8 @@ const logHike = function (event) {
 
 const viewHike = function (event) {
   event.preventDefault()
-  $("#hikesHtml").show()
+  $('#hikesHtml').show()
+
   api.viewHike()
     .then(ui.viewHikeSuccess)
     .catch(ui.onFailure)
@@ -52,10 +53,33 @@ const editHike = function (event) {
     .catch(ui.onFailure)
 }
 
+const changeView = function (event) {
+  console.log('clicked ', event.target)
+
+  if ($(this).hasClass('changePassword')) {
+    $('#change-password').show()
+    $('#log-hike').hide()
+    $('#hikesHtml').hide()
+  } else if ($(this).hasClass('hikeLogger')) {
+    $('#log-hike').show()
+    $('#change-password').hide()
+    $('#hikesHtml').hide()
+  } else if ($(this).hasClass('active')) {
+    $('#log-hike').hide()
+    $('#change-password').hide()
+    $('#hikesHtml').hide()
+  } else if ($(this).hasClass('viewHikes')) {
+    $('#hikesHtml').show()
+    $('#log-hike').hide()
+    $('#change-password').hide()
+  }
+}
+
 module.exports = {
   logHike,
   viewHike,
   deleteHike,
   showHike,
-  editHike
+  editHike,
+  changeView
 }

@@ -12,6 +12,10 @@ $(() => {
   $('#hikesHtml').on('click', '.delete-hike', hikeEvents.deleteHike)
   $('#hikesHtml').on('click', '.edit-hike', hikeEvents.showHike)
   $('#showSingleHike').on('submit', '#edit-hike', hikeEvents.editHike)
+  $('.changePassword').on('click', hikeEvents.changeView)
+  $('.hikeLogger').on('click', hikeEvents.changeView)
+  $('#home').on('click', hikeEvents.changeView)
+  $('.viewHikes').on('click', hikeEvents.changeView)
 })
 
 $(() => {
@@ -19,4 +23,5 @@ $(() => {
   $('#log-hike').hide()
   $('#sign-out').hide()
   $('#view-hikes').hide()
+  $('.topnav').hide()
 })

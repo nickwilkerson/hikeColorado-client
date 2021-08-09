@@ -9,12 +9,11 @@ const onSignInSuccess = function (response) {
   store.user = response.user
   $('#message').text(`signed in ${response.user.email}!`)
   $('#sign-in').trigger('reset')
-  $('#log-hike').show()
-  $('#change-password').show()
   $('#sign-out').show()
   $('#view-hikes').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('.topnav').show()
 }
 
 const onSignOutSuccess = function () {
