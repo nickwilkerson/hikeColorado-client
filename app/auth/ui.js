@@ -7,7 +7,6 @@ const onSignUpSuccess = function (response) {
 
 const onSignInSuccess = function (response) {
   store.user = response.user
-  console.log('You have successfully signed in, and here is your token:', store.user)
   $('#message').text(`signed in ${response.user.email}!`)
   $('#sign-in').trigger('reset')
   $('#log-hike').show()

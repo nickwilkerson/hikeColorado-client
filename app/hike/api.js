@@ -33,10 +33,10 @@ const deleteHike = function (id) {
   })
 }
 
-const editHike = function (id) {
+const showHike = function (id) {
   return $.ajax({
     url: config.apiUrl + '/hike/' + id,
-    method: 'PATCH',
+    method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -44,9 +44,21 @@ const editHike = function (id) {
   })
 }
 
+const editHike = function (form, id) {
+  return $.ajax({
+    url: config.apiUrl + '/hike/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: form
+  })
+}
+
 module.exports = {
   logHike,
   viewHike,
   deleteHike,
+  showHike,
   editHike
 }

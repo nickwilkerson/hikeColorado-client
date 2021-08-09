@@ -7,10 +7,7 @@ const logHikeSuccess = function (response) {
 }
 
 const viewHikeSuccess = function (data) {
-  // const hikes = data.hike
-  console.log('data is', data)
   store.view = data.hike
-  console.log('data.hike is:', store.view)
   let hikesHtml = ''
 
   store.view.forEach(hike => {
@@ -25,6 +22,7 @@ const viewHikeSuccess = function (data) {
     }
   })
   $('#hikesHtml').html(hikesHtml)
+  console.log('hike ids: ', store.view)
 }
 
 const deleteHikeSuccess = function (data) {
@@ -32,8 +30,29 @@ const deleteHikeSuccess = function (data) {
   console.log('deleted.')
 }
 
+const showHikeSuccess = function (data) {
+  console.log('show hike success call')
+  const showSingleHike = `
+    <form id="edit-hike">
+      <h3>${data.hike.name}</h3>
+      <h5>Edit Hike</h5>
+      <label>name:</label>
+      <input name="hike[name]" type="text" placeholder="Enter Hike Name">
+      <label>location:</label>
+      <input name="hike[location]" type="text" placeholder="Enter Hike Location">
+      <input type="submit" value="Update Hike">
+    </form>
+  `
+  $('#showSingleHike').html(showSingleHike)
+  $('#showSingleHike').show()
+  $('#hikesHtml').hide()
+}
+
 const editHikeSuccess = function (data) {
   console.log('edit hike reached the UI success call')
+  $('#edit-hike').trigger('reset')
+  $('#showSingleHike').hide()
+  $('#hikesHtml').show()
 }
 
 const onFailure = function () {
@@ -45,5 +64,6 @@ module.exports = {
   viewHikeSuccess,
   deleteHikeSuccess,
   editHikeSuccess,
+  showHikeSuccess,
   onFailure
 }

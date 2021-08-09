@@ -16,7 +16,7 @@ const logHike = function (event) {
 
 const viewHike = function (event) {
   event.preventDefault()
-
+  $("#hikesHtml").show()
   api.viewHike()
     .then(ui.viewHikeSuccess)
     .catch(ui.onFailure)
@@ -31,43 +31,31 @@ const deleteHike = function (event) {
     .catch(ui.onFailure)
 }
 
-const editHike = function (event) {
+const showHike = function (event) {
   event.preventDefault()
-  const hike = event.target.id
-  console.log('clicked', hike)
+  $('#hikesHtml').show()
 
-  api.editHike(hike)
-    .then(ui.editHikeSuccess)
-    .catch(onFailure)
+  store.id = event.target.id
+  console.log('event.target: ', store.id)
+  api.showHike(store.id)
+    .then(ui.showHikeSuccess)
+    .catch(ui.onFailure)
 }
 
-const editHikeForm = function (event) {
+const editHike = function (event) {
   event.preventDefault()
-  console.log('button reaching this point', event.target.id)
-  console.log('checking the store variable', store.hike)
-  const hikeClicked = event.target.id
-  const hikes = store.hike
-
-  let editHike = ''
-  hikes.forEach((hike) => {
-    editHike += `
-        <form id="edit-hike">
-          <h3>Edit Hike</h3>
-          <label>name:</label>
-          <input name="hike[name]" type="text" placeholder="Enter Hike Name">
-          <label>location:</label>
-          <input name="hike[location]" type="text" placeholder="Enter Hike Location">
-          <input type="submit" value="Update Hike" $("#edit-hike")>
-        </form>
-    `
-  })
-  $('#editHike').html(editHike)
+  $('#showSingleHike').show()
+  const form = getFormFields(event.target)
+  console.log('store', store.id)
+  api.editHike(form, store.id)
+    .then(ui.editHikeSuccess)
+    .catch(ui.onFailure)
 }
 
 module.exports = {
   logHike,
   viewHike,
   deleteHike,
-  editHikeForm,
+  showHike,
   editHike
 }
