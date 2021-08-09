@@ -25,6 +25,7 @@ const onSignOutSuccess = function () {
   $('#sign-in').show()
   $('#sign-up').show()
   $('#hikesHtml').hide()
+  $('.topnav').hide()
 }
 
 const changePasswordSuccess = function () {

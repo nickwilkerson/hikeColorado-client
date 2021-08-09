@@ -74,10 +74,21 @@
 
         <form id= "log-hike">
           <h3>Log Hike</h3>
-          <label>name:</label>
+          <label>Name:</label>
           <input name="hike[name]" type="text" placeholder="Enter Hike Name">
-          <label>location:</label>
+          <label>Location:</label>
           <input name="hike[location]" type="text" placeholder="Enter Hike Location">
+          <label>Distance:</label>
+          <input name="hike[distance]" type="text" placeholder="Enter Hike Distance">
+          <label for="difficulty">Difficulty:</label>
+          <select id="difficulty" name="hike[difficulty]" type="text">
+            <option value="easy">Easy</option>
+            <option value="moderate">Moderate</option>
+            <option value="difficult">Difficult</option>
+            <option value="strenuous">Strenuous</option>
+          </select>
+          <label>Notes:</label>
+          <input name="hike[notes]" type="text" placeholder="Optional Notes">
           <input type="submit" value="Log Hike">
         </form>
 

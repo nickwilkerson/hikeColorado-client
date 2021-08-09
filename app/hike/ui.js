@@ -15,10 +15,14 @@ const viewHikeSuccess = function (data) {
       hikesHtml += `
       <h6>Name: ${hike.name}</h6>
       <h6>Location: ${hike.location}</h6>
+      <h6>Distance: ${hike.distance}</h6>
+      <h6>Difficulty: ${hike.difficulty}</h6>
+      <h6>Notes: ${hike.notes}</h6>
       <button class='edit-hike' id=${hike._id}>Edit</button>
       <button class='delete-hike' id='${hike._id}'>Delete</button>
   `
     }
+    console.log('hike is', hike)
   })
   $('#hikesHtml').html(hikesHtml)
 }
@@ -32,12 +36,24 @@ const showHikeSuccess = function (data) {
     <form id="edit-hike">
       <h3>${data.hike.name}</h3>
       <h5>Edit Hike</h5>
-      <label>name:</label>
-      <input name="hike[name]" type="text" placeholder="Enter Hike Name">
-      <label>location:</label>
-      <input name="hike[location]" type="text" placeholder="Enter Hike Location">
-      <input type="submit" value="Update Hike">
-    </form>
+      <form id= "log-hike">
+          <label>Name:</label>
+          <input name="hike[name]" type="text" placeholder="Enter Hike Name">
+          <label>Location:</label>
+          <input name="hike[location]" type="text" placeholder="Enter Hike Location">
+          <label>Distance:</label>
+          <input name="hike[distance]" type="text" placeholder="Enter Hike Distance">
+          <label for="difficulty">Difficulty:</label>
+          <select id="difficulty" name="hike[difficulty]" type="text">
+            <option value="easy">Easy</option>
+            <option value="moderate">Moderate</option>
+            <option value="difficult">Difficult</option>
+            <option value="strenuous">Strenuous</option>
+          </select>
+          <label>Notes:</label>
+          <input name="hike[notes]" type="text" placeholder="Optional Notes">
+          <input type="submit" value="Log Hike">
+        </form>
   `
   $('#showSingleHike').html(showSingleHike)
   $('#showSingleHike').show()

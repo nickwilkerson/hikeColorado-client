@@ -39,7 +39,7 @@ h1 {
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: hsl(134, 100%, 14%);
   color: white;
 }
 
@@ -123,3 +123,10 @@ h1 {
 //   background-color: rgb(72, 72, 72);
 //   color: white;
 // }
+
+#log-hike {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+}
