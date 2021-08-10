@@ -70,6 +70,7 @@ const changeView = function (event) {
     $('#change-password').hide()
     $('#hikesHtml').hide()
     $('#showSingleHike').hide()
+    $('#message').text('')
   } else if ($(this).hasClass('viewHikes')) {
     $('#hikesHtml').show()
     $('#log-hike').hide()
@@ -77,6 +78,7 @@ const changeView = function (event) {
     $('#showSingleHike').hide()
   }
 }
+
 
 module.exports = {
   logHike,

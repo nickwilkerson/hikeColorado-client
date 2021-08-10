@@ -22,13 +22,13 @@ const viewHikeSuccess = function (data) {
       <button class='delete-hike' id='${hike._id}'>Delete</button>
   `
     }
-    console.log('hike is', hike)
   })
   $('#hikesHtml').html(hikesHtml)
 }
 
 const deleteHikeSuccess = function (data) {
   $('#message').text('Hike Deleted.')
+  console.log('data is')
 }
 
 const showHikeSuccess = function (data) {
@@ -37,7 +37,7 @@ const showHikeSuccess = function (data) {
       <h5>Edit Hike</h5>
       <h3>${data.hike.name}</h3>
         <div id="showAllHikes">
-        <form id= "log-hike">
+        <form id="log-hike">
           <label>Name:</label>
           <input name="hike[name]" type="text" placeholder=${data.hike.name}>
           <label>Location:</label>

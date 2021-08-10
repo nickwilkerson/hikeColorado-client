@@ -3,11 +3,13 @@ const store = require('./../store')
 const onSignUpSuccess = function (response) {
   $('#message').text(`Thanks For Signing Up ${response.user.email}!`)
   $('#sign-up').trigger('reset')
+  $('.signUp-box').hide()
+  $('.signIn-box').show()
 }
 
 const onSignInSuccess = function (response) {
   store.user = response.user
-  $('#message').text(`signed in ${response.user.email}!`)
+  $('#message').text(`You're signed in, ${response.user.email}!`)
   $('#sign-in').trigger('reset')
   $('#sign-out').show()
   $('#view-hikes').show()

@@ -1,10 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap');
 
-body {
-  background-image: url(https://themes10.win/wp-content/uploads/2020/07/Colorado-Mountain-Nature-4K-Background.jpg);
-  background-size: cover;
-}
+// body {
+//   background-image: url(https://themes10.win/wp-content/uploads/2020/07/Colorado-Mountain-Nature-4K-Background.jpg);
+//   background-size: cover;
+// }
 h1 {
   text-align: center;
   margin-top: 20px;
@@ -61,14 +61,14 @@ h1 {
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
 }
-#hikesHtml {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 600px;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
-}
+// #hikesHtml {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   margin: 0 600px;
+//   background-color: rgba(0, 0, 0, 0.4);
+//   color: white;
+// }
 
 .signUp-box {
   display: flex;
