@@ -1,10 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap');
 
-// body {
-//   background-image: url(https://themes10.win/wp-content/uploads/2020/07/Colorado-Mountain-Nature-4K-Background.jpg);
-//   background-size: cover;
-// }
+body {
+  background-image: url(https://themes10.win/wp-content/uploads/2020/07/Colorado-Mountain-Nature-4K-Background.jpg);
+  background-size: cover;
+}
 h1 {
   text-align: center;
   margin-top: 20px;
@@ -27,7 +27,7 @@ h1 {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
   font-family: 'Bai Jamjuree', sans-serif;
 }
 
@@ -39,12 +39,146 @@ h1 {
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: hsl(134, 100%, 14%);
+  background-color: rgb(54,62,34);
   color: white;
 }
 
 #sign-out {
   color: white;
+}
+
+// #hikesHtml {
+//   background-color: rgba(0, 0, 0, 0.4);
+//   width: auto;
+
+// }
+
+#hikeLogger {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 600px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+#hikesHtml {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 600px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.signUp-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.signUp-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+.signUp-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+#sign-up-button {
+  border-radius: 25px;
+  width: 100px;
+  height: 50px;
+  font-size: large;
+  background: rgba(0,0,0,.5);
+  color: white;
+  display: inline-block;
+}
+
+#sign-up-button:hover {
+  background-color: rgba(255, 255, 255, 0.208)
+}
+
+.signIn-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.signIn-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+.signIn-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+#sign-in-button {
+  border-radius: 25px;
+  width: 100px;
+  height: 50px;
+  font-size: large;
+  background: rgba(0,0,0,.5);
+  color: white;
+  display: inline-block;
+}
+
+#sign-in-button:hover {
+  background-color: rgba(255, 255, 255, 0.208)
+}
+#not-user:hover {
+  background-color: rgba(255, 255, 255, 0.208)
+}
+#already-user:hover {
+  background-color: rgba(255, 255, 255, 0.208)
+}
+.input {
+  font-family: 'Bai Jamjuree', sans-serif;
 }
 
 // // #sign-up {
@@ -112,17 +246,18 @@ h1 {
 //   background-color: rgb(72, 72, 72);
 //   color: white;
 // }
-
-//  #already-user {
-//   display: flex;
-//   justify-content: center;
-//   width: 91.25%;
-//   margin: auto;
-//   margin-bottom: 7px;
-//   border: 2px solid gray;
-//   background-color: rgb(72, 72, 72);
-//   color: white;
-// }
+.buttons {
+  display: inline-block;
+}
+ #already-user, #not-user {
+  border-radius: 25px;
+  width: 150px;
+  height: 50px;
+  font-size: large;
+  background: rgba(0,0,0,.5);
+  color: white;
+  display: inline-block;
+}
 
 #log-hike {
   display: flex;

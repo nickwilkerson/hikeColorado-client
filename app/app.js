@@ -16,6 +16,8 @@ $(() => {
   $('.hikeLogger').on('click', hikeEvents.changeView)
   $('#home').on('click', hikeEvents.changeView)
   $('.viewHikes').on('click', hikeEvents.changeView)
+  $('#not-user').on('click', authEvents.notUser)
+  $('#already-user').on('click', authEvents.alreadyUser)
 })
 
 $(() => {
@@ -24,4 +26,5 @@ $(() => {
   $('#sign-out').hide()
   $('#view-hikes').hide()
   $('.topnav').hide()
+  $('.signUp-box').hide()
 })

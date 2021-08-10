@@ -59,10 +59,12 @@ const changeView = function (event) {
     $('#change-password').show()
     $('#log-hike').hide()
     $('#hikesHtml').hide()
+    $('#showSingleHike').hide()
   } else if ($(this).hasClass('hikeLogger')) {
     $('#log-hike').show()
     $('#change-password').hide()
     $('#hikesHtml').hide()
+    $('#showSingleHike').hide()
   } else if ($(this).hasClass('active')) {
     $('#log-hike').hide()
     $('#change-password').hide()
@@ -72,6 +74,7 @@ const changeView = function (event) {
     $('#hikesHtml').show()
     $('#log-hike').hide()
     $('#change-password').hide()
+    $('#showSingleHike').hide()
   }
 }
 

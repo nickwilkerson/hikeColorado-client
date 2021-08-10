@@ -38,9 +38,21 @@ const changePassword = function (event) {
     .catch(ui.onFailure)
 }
 
+const alreadyUser = function () {
+  $('.signUp-box').hide()
+  $('.signIn-box').show()
+  $('#message').text('Glad to see ya again!')
+}
+const notUser = function () {
+  $('.signIn-box').hide()
+  $('.signUp-box').show()
+  $('#message').text('Lets get ya signed up!')
+}
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  alreadyUser,
+  notUser
 }

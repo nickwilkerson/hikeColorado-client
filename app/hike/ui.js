@@ -34,11 +34,12 @@ const deleteHikeSuccess = function (data) {
 const showHikeSuccess = function (data) {
   const showSingleHike = `
     <form id="edit-hike">
-      <h3>${data.hike.name}</h3>
       <h5>Edit Hike</h5>
-      <form id= "log-hike">
+      <h3>${data.hike.name}</h3>
+        <div id="showAllHikes">
+        <form id= "log-hike">
           <label>Name:</label>
-          <input name="hike[name]" type="text" placeholder="Enter Hike Name">
+          <input name="hike[name]" type="text" placeholder=${data.hike.name}>
           <label>Location:</label>
           <input name="hike[location]" type="text" placeholder="Enter Hike Location">
           <label>Distance:</label>
@@ -54,6 +55,7 @@ const showHikeSuccess = function (data) {
           <input name="hike[notes]" type="text" placeholder="Optional Notes">
           <input type="submit" value="Log Hike">
         </form>
+        </div>
   `
   $('#showSingleHike').html(showSingleHike)
   $('#showSingleHike').show()

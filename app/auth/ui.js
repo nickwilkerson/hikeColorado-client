@@ -11,8 +11,8 @@ const onSignInSuccess = function (response) {
   $('#sign-in').trigger('reset')
   $('#sign-out').show()
   $('#view-hikes').show()
-  $('#sign-in').hide()
-  $('#sign-up').hide()
+  $('.signUp-box').hide()
+  $('.signIn-box').hide()
   $('.topnav').show()
 }
 
@@ -22,8 +22,8 @@ const onSignOutSuccess = function () {
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#view-hikes').hide()
-  $('#sign-in').show()
-  $('#sign-up').show()
+  $('.signIn-box').show()
+  $('.signOut-box').show()
   $('#hikesHtml').hide()
   $('.topnav').hide()
 }
