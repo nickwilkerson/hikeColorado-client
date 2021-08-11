@@ -21,10 +21,12 @@ $(() => {
 })
 
 $(() => {
-  $('#change-password').hide()
+  $('#changePasswordBox').hide()
   $('#log-hike').hide()
   $('#sign-out').hide()
   $('#view-hikes').hide()
   $('.topnav').hide()
   $('.signUp-box').hide()
+  $('#hikeLogger').hide()
+  $('#showSingleHike').hide()
 })

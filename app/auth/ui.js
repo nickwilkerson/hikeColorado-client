@@ -28,6 +28,13 @@ const onSignOutSuccess = function () {
   $('.signOut-box').show()
   $('#hikesHtml').hide()
   $('.topnav').hide()
+  $('#log-hike').trigger('reset')
+  $('#changePasswordBox').hide()
+  $('#change-password').trigger('reset')
+  $('#edit-hike').trigger('reset')
+  $('#edit-hike').hide()
+  $('#hikeLogger').hide()
+  $('#showSingleHike').hide()
 }
 
 const changePasswordSuccess = function () {

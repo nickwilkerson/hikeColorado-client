@@ -53,32 +53,34 @@ const editHike = function (event) {
 }
 
 const changeView = function (event) {
-  console.log('clicked ', event.target)
-
   if ($(this).hasClass('changePassword')) {
+    $('#changePasswordBox').show()
     $('#change-password').show()
     $('#log-hike').hide()
+    $('#hikeLogger').hide()
     $('#hikesHtml').hide()
     $('#showSingleHike').hide()
   } else if ($(this).hasClass('hikeLogger')) {
+    $('#hikeLogger').show()
     $('#log-hike').show()
-    $('#change-password').hide()
+    $('#changePasswordBox').hide()
     $('#hikesHtml').hide()
     $('#showSingleHike').hide()
   } else if ($(this).hasClass('active')) {
     $('#log-hike').hide()
-    $('#change-password').hide()
+    $('#hikeLogger').hide()
+    $('#changePasswordBox').hide()
     $('#hikesHtml').hide()
     $('#showSingleHike').hide()
     $('#message').text('')
   } else if ($(this).hasClass('viewHikes')) {
     $('#hikesHtml').show()
     $('#log-hike').hide()
-    $('#change-password').hide()
+    $('#hikeLogger').hide()
+    $('#changePasswordBox').hide()
     $('#showSingleHike').hide()
   }
 }
-
 
 module.exports = {
   logHike,

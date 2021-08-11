@@ -13,13 +13,15 @@ const viewHikeSuccess = function (data) {
   store.view.forEach(hike => {
     if (store.user._id === hike.owner) {
       hikesHtml += `
-      <h6>Name: ${hike.name}</h6>
-      <h6>Location: ${hike.location}</h6>
-      <h6>Distance: ${hike.distance}</h6>
-      <h6>Difficulty: ${hike.difficulty}</h6>
-      <h6>Notes: ${hike.notes}</h6>
-      <button class='edit-hike' id=${hike._id}>Edit</button>
-      <button class='delete-hike' id='${hike._id}'>Delete</button>
+      <div class="display-box">
+        <p class="display">Name: ${hike.name}<br></p>
+        <p class="display">Location: ${hike.location}<br></p>
+        <p class="display">Distance: ${hike.distance}</p>
+        <p class="display">Difficulty: ${hike.difficulty}</p>
+        <p class="display">Notes: ${hike.notes}</p>
+        <button class='edit-hike' id=${hike._id}>Edit</button>
+        <button class='delete-hike' id='${hike._id}'>Delete</button>
+      </div>
   `
     }
   })
@@ -28,32 +30,39 @@ const viewHikeSuccess = function (data) {
 
 const deleteHikeSuccess = function (data) {
   $('#message').text('Hike Deleted.')
-  console.log('data is')
 }
 
 const showHikeSuccess = function (data) {
   const showSingleHike = `
-    <form id="edit-hike">
-      <h5>Edit Hike</h5>
-      <h3>${data.hike.name}</h3>
-        <div id="showAllHikes">
-        <form id="log-hike">
-          <label>Name:</label>
-          <input name="hike[name]" type="text" placeholder=${data.hike.name}>
-          <label>Location:</label>
-          <input name="hike[location]" type="text" placeholder="Enter Hike Location">
-          <label>Distance:</label>
-          <input name="hike[distance]" type="text" placeholder="Enter Hike Distance">
-          <label for="difficulty">Difficulty:</label>
-          <select id="difficulty" name="hike[difficulty]" type="text">
-            <option value="easy">Easy</option>
-            <option value="moderate">Moderate</option>
-            <option value="difficult">Difficult</option>
-            <option value="strenuous">Strenuous</option>
-          </select>
-          <label>Notes:</label>
-          <input name="hike[notes]" type="text" placeholder="Optional Notes">
-          <input type="submit" value="Log Hike">
+          <div id="showSingleHike">
+        <form id= "edit-hike">
+          <h3>Edit Hike</h3>
+          <div class="user-box">
+            <label>Name:</label>
+            <input name="hike[name]" type="text" placeholder="Enter Hike Name">
+          </div>
+          <div class="user-box">
+            <label>Location:</label>
+            <input name="hike[location]" type="text" placeholder="Enter Hike Location">
+          </div>
+          <div class="user-box">
+            <label>Distance:</label>
+            <input name="hike[distance]" type="text" placeholder="Enter Hike Distance">
+          </div>
+          <div class="user-box">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty" name="hike[difficulty]" type="text">
+              <option value="easy">Easy</option>
+              <option value="moderate">Moderate</option>
+              <option value="difficult">Difficult</option>
+              <option value="strenuous">Strenuous</option>
+            </select>
+          </div>
+          <div class="user-box">
+            <label>Notes:</label>
+            <input name="hike[notes]" type="text" placeholder="Optional Notes">
+          </div>
+          <input type="submit" value="Update Hike" id="update-hike-button">
         </form>
         </div>
   `
@@ -63,6 +72,7 @@ const showHikeSuccess = function (data) {
 }
 
 const editHikeSuccess = function (data) {
+  $('#message').text('Hike updated.')
   $('#edit-hike').trigger('reset')
   $('#showSingleHike').hide()
   $('#hikesHtml').show()
