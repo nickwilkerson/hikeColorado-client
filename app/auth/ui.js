@@ -16,6 +16,7 @@ const onSignInSuccess = function (response) {
   $('.signUp-box').hide()
   $('.signIn-box').hide()
   $('.topnav').show()
+  $('#header').hide()
 }
 
 const onSignOutSuccess = function () {
@@ -35,6 +36,7 @@ const onSignOutSuccess = function () {
   $('#edit-hike').hide()
   $('#hikeLogger').hide()
   $('#showSingleHike').hide()
+  $('#header').show()
 }
 
 const changePasswordSuccess = function () {

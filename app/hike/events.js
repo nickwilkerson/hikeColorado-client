@@ -36,7 +36,6 @@ const showHike = function (event) {
   $('#hikesHtml').show()
 
   store.id = event.target.id
-  console.log('event.target: ', store.id)
   api.showHike(store.id)
     .then(ui.showHikeSuccess)
     .catch(ui.onFailure)
@@ -46,7 +45,6 @@ const editHike = function (event) {
   event.preventDefault()
   $('#showSingleHike').show()
   const form = getFormFields(event.target)
-  console.log('store', store.id)
   api.editHike(form, store.id)
     .then(ui.editHikeSuccess)
     .catch(ui.onFailure)
