@@ -39,8 +39,7 @@ const showHike = function (id) {
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    },
-    data: id
+    }
   })
 }
 

@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap');
 
 body {
-  background-image: url(https://themes10.win/wp-content/uploads/2020/07/Colorado-Mountain-Nature-4K-Background.jpg);
-  background-size: cover;
-  overflow: hidden;
-  background-repeat: no-repeat;
+  // background-image: url(https://themes10.win/wp-content/uploads/2020/07/Colorado-Mountain-Nature-4K-Background.jpg);
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  background-color: steelblue;
 }
 h1 {
   text-align: center;
@@ -38,6 +38,18 @@ h1 {
 .topnav a:hover {
   background-color: rgb(255, 255, 255);
   color: black;
+}
+
+#hikesHtml, .card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#hikesHtml, .view-hike {
+  border-radius: 25px;
 }
 
 #sign-out {
@@ -344,55 +356,53 @@ h1 {
   width: 300px;
 }
 
-#showSingleHike {
+#showSingleHike, .card {
   display: flex;
-  flex-direction: column;
-  margin-top: 25px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
-  color: white;
-  font-size: 20px;
-  font-family: 'Bai Jamjuree', sans-serif;
-  padding: 40px;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-#showSingleHike h3 {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-  font-family: 'Bai Jamjuree', sans-serif;
-}
-#showSingleHike .user-box input {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-}
+//   transform: translate(-50%, -50%);
+//   background: rgba(0,0,0,.5);
+//   box-sizing: border-box;
+//   box-shadow: 0 15px 25px rgba(0,0,0,.6);
+//   border-radius: 10px;
+//   color: white;
+//   font-size: 20px;
+//   font-family: 'Bai Jamjuree', sans-serif;
+//   padding: 40px;
+// }
 
-#update-hike-button {
-  border-radius: 25px;
-  width: 150px;
-  height: 50px;
-  font-size: large;
-  background: rgba(0,0,0,.5);
-  color: white;
-  display: inline-block;
-}
+// #showSingleHike h3 {
+//   margin: 0 0 30px;
+//   padding: 0;
+//   color: #fff;
+//   text-align: center;
+//   font-family: 'Bai Jamjuree', sans-serif;
+// }
+// #showSingleHike .user-box input {
+//   width: 100%;
+//   padding: 10px 0;
+//   font-size: 16px;
+//   color: #fff;
+//   margin-bottom: 30px;
+//   border: none;
+//   border-bottom: 1px solid #fff;
+//   outline: none;
+//   background: transparent;
+// }
 
-#update-hike-button:hover {
-  background-color: rgba(255, 255, 255, 0.208)
-}
+// #update-hike-button {
+//   border-radius: 25px;
+//   width: 150px;
+//   height: 50px;
+//   font-size: large;
+//   background: rgba(0,0,0,.5);
+//   color: white;
+//   display: inline-block;
+// }
+
+// #update-hike-button:hover {
+//   background-color: rgba(255, 255, 255, 0.208)
+// }

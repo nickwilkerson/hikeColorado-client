@@ -1,7 +1,7 @@
 const getFormFields = require('./../../lib/get-form-fields') // get FormFields
 const api = require('./api') // access the api
 const ui = require('./ui') // access the ui
-const store = require('./../store')
+// const store = require('./../store')
 
 const logHike = function (event) {
   event.preventDefault() // prevents webpage from refreshing when button is clicked
@@ -24,33 +24,40 @@ const viewHike = function (event) {
 
 const deleteHike = function (event) {
   event.preventDefault()
-  const hike = event.target.id
-
-  api.deleteHike(hike)
+  console.log('event ', event.target.id)
+  api.deleteHike(event.target.id)
     .then(ui.deleteHikeSuccess)
     .catch(ui.onFailure)
 }
 
 const showHike = function (event) {
   event.preventDefault()
-  $('#hikesHtml').show()
 
-  store.id = event.target.id
-  console.log('event.target: ', store.id)
-  api.showHike(store.id)
+  const hike = event.target.id
+  console.log('event.target: ', hike)
+  console.log('clicked')
+  api.showHike(hike)
     .then(ui.showHikeSuccess)
     .catch(ui.onFailure)
 }
 
 const editHike = function (event) {
   event.preventDefault()
-  $('#showSingleHike').show()
   const form = getFormFields(event.target)
-  console.log('store', store.id)
-  api.editHike(form, store.id)
+  const id = event.target.id
+  api.editHike(form, id)
     .then(ui.editHikeSuccess)
     .catch(ui.onFailure)
 }
+
+// const editHikeForm = function () {
+//   const editForm = `
+//   <form>
+//     <label>Notes: </label>
+//     <input name="hike[notes]" type="text" placeholder="Notes">
+//   </form>
+//   `
+// }
 
 const changeView = function (event) {
   if ($(this).hasClass('changePassword')) {
