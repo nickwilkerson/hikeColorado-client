@@ -1,11 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 body {
   // background-image: url(https://themes10.win/wp-content/uploads/2020/07/Colorado-Mountain-Nature-4K-Background.jpg);
   // background-size: cover;
   // background-repeat: no-repeat;
-  background-color: steelblue;
+  // background-color: #F3EFCC;
+  background-image: url('https://b2b.libbey.com/wp-content/uploads/2016/12/iStock-489307302.jpg');
 }
 h1 {
   text-align: center;
@@ -17,9 +19,10 @@ h1 {
 
 .topnav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   // margin-top: 20px;
-  background: rgba(0,0,0,.5);
+  background-color: #35433D;
+  color: black;
   overflow: hidden;
   cursor: pointer;
 }
@@ -40,6 +43,12 @@ h1 {
   color: black;
 }
 
+
+// #home, #log-hike, #view-hikes, #sign-out {
+//   display: flex;
+//   justify-content: flex-end;
+// }
+
 #hikesHtml, .card {
   display: flex;
   flex-flow: row wrap;
@@ -54,6 +63,7 @@ h1 {
 
 #sign-out {
   color: white;
+  margin-right: 50px;
 }
 #sign-out:hover {
   background-color: #ddd;
@@ -306,34 +316,62 @@ h1 {
   margin-left: 50px;
 }
 
-#hikesHtml .edit-hike {
-  border-radius: 25px;
-  width: 100px;
-  height: 50px;
-  font-size: large;
-  background: rgba(0,0,0,.5);
-  color: white;
-  display: inline-block;
-  margin-bottom: 15px;
-}
-#hikesHtml .edit-hike:hover {
-  background-color: rgba(255, 255, 255, 0.208)
+// #hikesHtml .edit-hike {
+//   border-radius: 25px;
+//   width: 100px;
+//   height: 50px;
+//   font-size: large;
+//   background: rgba(0,0,0,.5);
+//   color: white;
+//   display: inline-block;
+//   margin-bottom: 15px;
+// }
+// #hikesHtml .edit-hike:hover {
+//   background-color: rgba(255, 255, 255, 0.208)
+// }
+
+// #hikesHtml .delete-hike {
+//   border-radius: 25px;
+//   width: 100px;
+//   height: 50px;
+//   font-size: large;
+//   background: rgba(0,0,0,.5);
+//   color: white;
+//   display: inline-block;
+//   margin-bottom: 15px;
+// }
+// #hikesHtml .delete-hike:hover {
+//   background-color: rgba(255, 255, 255, 0.208)
+// }
+
+h4 {
+  text-align: center;
 }
 
-#hikesHtml .delete-hike {
-  border-radius: 25px;
-  width: 100px;
-  height: 50px;
-  font-size: large;
-  background: rgba(0,0,0,.5);
-  color: white;
-  display: inline-block;
-  margin-bottom: 15px;
-}
-#hikesHtml .delete-hike:hover {
-  background-color: rgba(255, 255, 255, 0.208)
+.card-header {
+  background-color: #CFB680;
 }
 
+#hikesHtml .card {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  font-family: 'Lato', sans-serif;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  margin: 15px 15px;
+}
+#hikesHtml .card p {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.view-hike {
+  width: 10rem;
+  margin: 10px;
+  margin: 10px auto;
+  background-color: #CFB680;
+}
 
 #message {
   // position: absolute;

@@ -1,7 +1,7 @@
 const store = require('./../store')
 
 // default card image
-const defaultImg = 'https://static.bhphotovideo.com/explora/sites/default/files/styles/top_shot/public/New-Hiking.jpg?itok=p0tfoXXi'
+// const defaultImg = 'https://static.bhphotovideo.com/explora/sites/default/files/styles/top_shot/public/New-Hiking.jpg?itok=p0tfoXXi'
 const cardImg = 'https://img.themanual.com/image/themanual/peter-pryharski-111529-unsplash-800x800.jpg'
 
 const logHikeSuccess = function (response) {
@@ -25,14 +25,14 @@ const viewHikeSuccess = function (data) {
     if (store.user._id === hike.owner) {
       store.hikeId = hike._id
       hikesHtml += `
-      <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="${defaultImg}" alt="Card image cap">
-      <div class="card-body">
-        <h3 class="card-title">${hike.name}</h3>
-        <p>${hike.location}</p>
-        <p>${hike.distance}</p>
-        <button class="view-hike" id=${hike._id}>View Hike</button>
+      <div class="card">
+        <h4 class="card-header">${hike.name}</h4>
+        <div class="body">
+          <p>${hike.location}</p>
+          <p>Level: ${hike.difficulty}</p>
+          <p>Length: ${hike.distance}</p>
         </div>
+        <button class="view-hike" id=${hike._id}>View Hike</button>
       </div>
   `
     }
@@ -42,6 +42,8 @@ const viewHikeSuccess = function (data) {
 
 const deleteHikeSuccess = function (data) {
   $('#message').text('Hike Deleted.')
+  $('#showSingleHike').hide()
+  $('#hikesHtml').show()
 }
 
 const showHikeSuccess = function (data) {

@@ -23,6 +23,7 @@ const onSignInSuccess = function (response) {
   $('.topnav').show()
   $('#header').hide()
   $('#message').addClass('success')
+
   setTimeout(() => {
     $('#message').html('')
     $('#message').removeClass('success')
