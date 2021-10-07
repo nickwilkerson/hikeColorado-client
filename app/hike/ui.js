@@ -50,23 +50,26 @@ const showHikeSuccess = function (data) {
   const hike = data.hike
   let showSingleHike = ''
   showSingleHike += `
-      <div class="card" style="width: 40rem;">
+      <div class="card">
         <img class="card-img-top" src="${cardImg}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">${hike.name}</h5>
-          <p class="card-text">${hike.notes}</p>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Location: ${hike.location}</li>
           <li class="list-group-item">Distance: ${hike.distance}</li>
           <li class="list-group-item">Difficulty: ${hike.difficulty}</li>
         </ul>
+        <div class="card-text">
+          <p class="description">Description</p>
+          <p>${hike.notes}</p>
+        </div>
         <div class="card-body">
           <button class="edit-hike" id=${hike._id}>Edit</button>
           <button class="delete-hike" id=${hike._id}>Delete</button>
         </div>
       </div>
-  `
+  `;
   $('#showSingleHike').html(showSingleHike)
   $('#showSingleHike').show()
   $('#hikesHtml').hide()

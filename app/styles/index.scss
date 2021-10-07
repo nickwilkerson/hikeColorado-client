@@ -396,9 +396,33 @@ h4 {
 
 #showSingleHike, .card {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 50px;
+  margin: auto;
+  margin-top: 30px;
+  width: 30em;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+.card-text {
+  text-align: center;
+  margin-top: 10px;
+}
+.description {
+  text-decoration: underline;
+  font-size: 25px;
+}
+h5 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.edit-hike, .delete-hike {
+  width: 5rem;
+  border-radius: 20px;
+  font-size: 20px;
+  background-color: #CFB680
 }
 
 //   transform: translate(-50%, -50%);
