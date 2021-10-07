@@ -75,6 +75,7 @@ const editHikeSuccess = function (data) {
   $('#edit-hike').trigger('reset')
   $('#showSingleHike').hide()
   $('#hikesHtml').show()
+  $('#edit-hike-form').hide()
 }
 
 const onFailure = function () {
