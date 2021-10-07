@@ -5,6 +5,11 @@ const onSignUpSuccess = function (response) {
   $('#sign-up').trigger('reset')
   $('.signUp-box').hide()
   $('.signIn-box').show()
+  $('#message').addClass('success')
+  setTimeout(() => {
+    $('#message').html('')
+    $('#message').removeClass('success')
+  }, 5000)
 }
 
 const onSignInSuccess = function (response) {
@@ -17,6 +22,11 @@ const onSignInSuccess = function (response) {
   $('.signIn-box').hide()
   $('.topnav').show()
   $('#header').hide()
+  $('#message').addClass('success')
+  setTimeout(() => {
+    $('#message').html('')
+    $('#message').removeClass('success')
+  }, 5000)
 }
 
 const onSignOutSuccess = function () {
@@ -37,11 +47,21 @@ const onSignOutSuccess = function () {
   $('#hikeLogger').hide()
   $('#showSingleHike').hide()
   $('#header').show()
+  $('#message').addClass('success')
+  setTimeout(() => {
+    $('#message').html('')
+    $('#message').removeClass('success')
+  }, 5000)
 }
 
 const changePasswordSuccess = function () {
   $('#message').text('Successful password change.')
   $('#change-password').trigger('reset')
+  $('#message').addClass('success')
+  setTimeout(() => {
+    $('#message').html('')
+    $('#message').removeClass('success')
+  }, 5000)
 }
 
 const onFailure = function () {

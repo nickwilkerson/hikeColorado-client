@@ -1,26 +1,38 @@
 const store = require('./../store')
 
+// default card image
+const defaultImg = 'https://static.bhphotovideo.com/explora/sites/default/files/styles/top_shot/public/New-Hiking.jpg?itok=p0tfoXXi'
+const cardImg = 'https://img.themanual.com/image/themanual/peter-pryharski-111529-unsplash-800x800.jpg'
+
 const logHikeSuccess = function (response) {
   store.hike = response.hike
   $('#message').text('Your hike has been logged.')
   $('#log-hike').trigger('reset')
+  $('#message').addClass('success')
+  setTimeout(() => {
+    $('#message').html('')
+    $('#message').removeClass('success')
+  }, 5000)
 }
 
 const viewHikeSuccess = function (data) {
-  store.view = data.hike
+  store.hikes = data.hike
   let hikesHtml = ''
 
-  store.view.forEach(hike => {
+  // loop through all hikes
+  // verify that hike owner matches hike id
+  store.hikes.forEach(hike => {
     if (store.user._id === hike.owner) {
+      store.hikeId = hike._id
       hikesHtml += `
-      <div class="display-box">
-        <p class="display">Name: ${hike.name}<br></p>
-        <p class="display">Location: ${hike.location}<br></p>
-        <p class="display">Distance: ${hike.distance}</p>
-        <p class="display">Difficulty: ${hike.difficulty}</p>
-        <p class="display">Notes: ${hike.notes}</p>
-        <button class='edit-hike' id=${hike._id}>Edit</button>
-        <button class='delete-hike' id='${hike._id}'>Delete</button>
+      <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="${defaultImg}" alt="Card image cap">
+      <div class="card-body">
+        <h3 class="card-title">${hike.name}</h3>
+        <p>${hike.location}</p>
+        <p>${hike.distance}</p>
+        <button class="view-hike" id=${hike._id}>View Hike</button>
+        </div>
       </div>
   `
     }
@@ -33,38 +45,25 @@ const deleteHikeSuccess = function (data) {
 }
 
 const showHikeSuccess = function (data) {
-  const showSingleHike = `
-          <div id="showSingleHike">
-        <form id= "edit-hike">
-          <h3>Edit Hike</h3>
-          <div class="user-box">
-            <label>Name:</label>
-            <input name="hike[name]" type="text" placeholder="Enter Hike Name">
-          </div>
-          <div class="user-box">
-            <label>Location:</label>
-            <input name="hike[location]" type="text" placeholder="Enter Hike Location">
-          </div>
-          <div class="user-box">
-            <label>Distance:</label>
-            <input name="hike[distance]" type="text" placeholder="Enter Hike Distance">
-          </div>
-          <div class="user-box">
-            <label for="difficulty">Difficulty:</label>
-            <select id="difficulty" name="hike[difficulty]" type="text">
-              <option value="easy">Easy</option>
-              <option value="moderate">Moderate</option>
-              <option value="difficult">Difficult</option>
-              <option value="strenuous">Strenuous</option>
-            </select>
-          </div>
-          <div class="user-box">
-            <label>Notes:</label>
-            <input name="hike[notes]" type="text" placeholder="Optional Notes">
-          </div>
-          <input type="submit" value="Update Hike" id="update-hike-button">
-        </form>
+  const hike = data.hike
+  let showSingleHike = ''
+  showSingleHike += `
+      <div class="card" style="width: 40rem;">
+        <img class="card-img-top" src="${cardImg}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">${hike.name}</h5>
+          <p class="card-text">${hike.notes}</p>
         </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Location: ${hike.location}</li>
+          <li class="list-group-item">Distance: ${hike.distance}</li>
+          <li class="list-group-item">Difficulty: ${hike.difficulty}</li>
+        </ul>
+        <div class="card-body">
+          <button class="edit-hike" id=${hike._id}>Edit</button>
+          <button class="delete-hike" id=${hike._id}>Delete</button>
+        </div>
+      </div>
   `
   $('#showSingleHike').html(showSingleHike)
   $('#showSingleHike').show()
@@ -76,6 +75,7 @@ const editHikeSuccess = function (data) {
   $('#edit-hike').trigger('reset')
   $('#showSingleHike').hide()
   $('#hikesHtml').show()
+  $('#edit-hike-form').hide()
 }
 
 const onFailure = function () {
