@@ -9,6 +9,8 @@ const logHikeSuccess = function (response) {
   $('#message').text('Your hike has been logged.')
   $('#log-hike').trigger('reset')
   $('#message').addClass('success')
+  $('#log-hike').hide()
+  $('#hikeLogger').hide()
   setTimeout(() => {
     $('#message').html('')
     $('#message').removeClass('success')
@@ -43,7 +45,12 @@ const viewHikeSuccess = function (data) {
 const deleteHikeSuccess = function (data) {
   $('#message').text('Hike Deleted.')
   $('#showSingleHike').hide()
-  $('#hikesHtml').show()
+  $('#hikesHtml').hide()
+
+  setTimeout(() => {
+    $('#message').html('')
+    $('#message').removeClass('success')
+  }, 5000)
 }
 
 const showHikeSuccess = function (data) {
@@ -69,7 +76,7 @@ const showHikeSuccess = function (data) {
           <button class="delete-hike" id=${hike._id}>Delete</button>
         </div>
       </div>
-  `;
+  `
   $('#showSingleHike').html(showSingleHike)
   $('#showSingleHike').show()
   $('#hikesHtml').hide()
@@ -79,8 +86,11 @@ const editHikeSuccess = function (data) {
   $('#message').text('Hike updated.')
   $('#edit-hike').trigger('reset')
   $('#showSingleHike').hide()
-  $('#hikesHtml').show()
   $('#edit-hike-form').hide()
+  setTimeout(() => {
+    $('#message').html('')
+    $('#message').removeClass('success')
+  }, 5000)
 }
 
 const onFailure = function () {

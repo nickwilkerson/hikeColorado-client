@@ -52,37 +52,38 @@ const editHikeForm = function (event) {
   $('#edit-hike-form').show()
   $('#showSingleHike').hide()
   let editForm = ''
-
   editForm += `
-  <form id=${event.target.id}>
-            <h3>Edit Hike</h3>
-            <div class="user-box">
-              <label>Name:</label>
-              <input name="hike[name]" type="text" placeholder="Enter Hike Name">
-            </div>
-            <div class="user-box">
-              <label>Location:</label>
-              <input name="hike[location]" type="text" placeholder="Enter Hike Location">
-            </div>
-            <div class="user-box">
-              <label>Distance:</label>
-              <input name="hike[distance]" type="text" placeholder="Enter Hike Distance">
-            </div>
-            <div class="user-box">
-              <label for="difficulty">Difficulty:</label>
-              <select class="difficulty" name="hike[difficulty]" type="text">
-                <option value="Easy">Easy</option>
-                <option value="Moderate">Moderate</option>
-                <option value="Difficult">Difficult</option>
-                <option value="Strenuous">Strenuous</option>
-              </select>
-            </div>
-            <div class="user-box">
-              <label>Notes:</label>
-              <input name="hike[notes]" type="text" placeholder="Optional Notes">
-            </div>
-            <input type="submit" id=${event.target.id} value="Update">
-          </form>
+   <div id="edit-form">
+        <form id="${event.target.id}" class="edit-form">
+          <h3>Edit Hike</h3>
+          <div class="user-box">
+            <label>Name:</label>
+            <input name="hike[name]" type="text" placeholder="Enter Hike Name">
+          </div>
+          <div class="user-box">
+            <label>Location:</label>
+            <input name="hike[location]" type="text" placeholder="Enter Hike Location">
+          </div>
+          <div class="user-box">
+            <label>Distance:</label>
+            <input name="hike[distance]" type="text" placeholder="Enter Hike Distance">
+          </div>
+          <div class="user-box">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty" name="hike[difficulty]" type="text">
+              <option value="Easy">Easy</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Difficult">Difficult</option>
+              <option value="Strenuous">Strenuous</option>
+            </select>
+          </div>
+          <div class="user-box">
+            <label>Notes:</label>
+            <input name="hike[notes]" type="text" placeholder="Optional Notes">
+          </div>
+          <input type="submit" value="Update" id="${event.target.id}" class="edit-button">
+        </form>
+        </div>
           `
   $('#edit-hike-form').html(editForm)
 }

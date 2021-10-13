@@ -3,12 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 body {
-  // background-image: url(https://themes10.win/wp-content/uploads/2020/07/Colorado-Mountain-Nature-4K-Background.jpg);
-  // background-size: cover;
-  // background-repeat: no-repeat;
+  background-repeat: no-repeat;
   // background-color: #F3EFCC;
   background-image: url('https://b2b.libbey.com/wp-content/uploads/2016/12/iStock-489307302.jpg');
 }
+
 h1 {
   text-align: center;
   margin-top: 20px;
@@ -20,7 +19,6 @@ h1 {
 .topnav {
   display: flex;
   justify-content: flex-end;
-  // margin-top: 20px;
   background-color: #35433D;
   color: black;
   overflow: hidden;
@@ -42,12 +40,6 @@ h1 {
   background-color: rgb(255, 255, 255);
   color: black;
 }
-
-
-// #home, #log-hike, #view-hikes, #sign-out {
-//   display: flex;
-//   justify-content: flex-end;
-// }
 
 #hikesHtml, .card {
   display: flex;
@@ -71,16 +63,14 @@ h1 {
 }
 
 
-.signUp-box {
+.signUp-box, .signIn-box, #hikeLogger, #changePasswordBox, #edit-form {
   display: flex;
   flex-direction: column;
-  margin-top: 25px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  margin: auto;
+  margin-top: 100px;
+  position: relative;
   width: 400px;
   padding: 40px;
-  transform: translate(-50%, -50%);
   background: rgba(0,0,0,.5);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
@@ -89,14 +79,15 @@ h1 {
   font-size: 20px;
 }
 
-.signUp-box h2 {
+.signUp-box h2, .signIn-box h2, #changePasswordBox h3, #hikeLogger h3, #edit-form h3 {
   margin: 0 0 30px;
   padding: 0;
   color: #fff;
   text-align: center;
   font-family: 'Bai Jamjuree', sans-serif;
 }
-.signUp-box .user-box input {
+
+.signUp-box .user-box input, .signIn-box .user-box input, #changePasswordBox .user-box input {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -108,7 +99,7 @@ h1 {
   background: transparent;
 }
 
-#sign-up-button {
+#sign-up-button, #sign-in-button, #change-password-button, #hike-logger-button, .edit-button {
   border-radius: 25px;
   width: 100px;
   height: 50px;
@@ -118,120 +109,12 @@ h1 {
   display: inline-block;
 }
 
-#sign-up-button:hover {
+#sign-in-button:hover, #sign-up-button:hover, #not-user:hover, #already-user:hover, #change-password-button:hover, #hike-logger-button:hover, .edit-button:hover {
   background-color: rgba(255, 255, 255, 0.208)
 }
 
-.signIn-box {
-  display: flex;
-  flex-direction: column;
-  margin-top: 25px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
-  color: white;
-  font-size: 20px;
-}
-
-.signIn-box h2 {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-  font-family: 'Bai Jamjuree', sans-serif;
-}
-.signIn-box .user-box input {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-}
-
-#sign-in-button {
-  border-radius: 25px;
-  width: 100px;
-  height: 50px;
-  font-size: large;
-  background: rgba(0,0,0,.5);
-  color: white;
-  display: inline-block;
-}
-
-#sign-in-button:hover {
-  background-color: rgba(255, 255, 255, 0.208)
-}
-#not-user:hover {
-  background-color: rgba(255, 255, 255, 0.208)
-}
-#already-user:hover {
-  background-color: rgba(255, 255, 255, 0.208)
-}
 .input {
   font-family: 'Bai Jamjuree', sans-serif;
-}
-
-
-#changePasswordBox {
-  display: flex;
-  flex-direction: column;
-  margin-top: 25px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
-  color: white;
-  font-size: 20px;
-}
-
-#changePasswordBox h3 {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-  font-family: 'Bai Jamjuree', sans-serif;
-}
-#changePasswordBox .user-box input {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-}
-
-#change-password-button {
-  border-radius: 25px;
-  width: 200px;
-  height: 50px;
-  font-size: large;
-  background: rgba(0,0,0,.5);
-  color: white;
-  display: inline-block;
-}
-
-#change-password-button:hover {
-  background-color: rgba(255, 255, 255, 0.208)
 }
 
 .buttons {
@@ -247,40 +130,14 @@ h1 {
   display: inline-block;
 }
 
-#log-hike {
+#log-hike, .edit-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 300px;
 }
 
-#hikeLogger {
-  display: flex;
-  flex-direction: column;
-  margin-top: 25px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
-  color: white;
-  font-size: 20px;
-  font-family: 'Bai Jamjuree', sans-serif;
-}
-
-#hikeLogger h3 {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-  font-family: 'Bai Jamjuree', sans-serif;
-}
-#hikeLogger .user-box input {
+#hikeLogger .user-box input, #edit-form .user-box input {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -292,20 +149,6 @@ h1 {
   background: transparent;
 }
 
-#hike-logger-button {
-  border-radius: 25px;
-  width: 150px;
-  height: 50px;
-  font-size: large;
-  background: rgba(0,0,0,.5);
-  color: white;
-  display: inline-block;
-}
-
-#hike-logger-button:hover {
-  background-color: rgba(255, 255, 255, 0.208)
-}
-
 .display-box {
   float: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -315,34 +158,6 @@ h1 {
   text-align: left;
   margin-left: 50px;
 }
-
-// #hikesHtml .edit-hike {
-//   border-radius: 25px;
-//   width: 100px;
-//   height: 50px;
-//   font-size: large;
-//   background: rgba(0,0,0,.5);
-//   color: white;
-//   display: inline-block;
-//   margin-bottom: 15px;
-// }
-// #hikesHtml .edit-hike:hover {
-//   background-color: rgba(255, 255, 255, 0.208)
-// }
-
-// #hikesHtml .delete-hike {
-//   border-radius: 25px;
-//   width: 100px;
-//   height: 50px;
-//   font-size: large;
-//   background: rgba(0,0,0,.5);
-//   color: white;
-//   display: inline-block;
-//   margin-bottom: 15px;
-// }
-// #hikesHtml .delete-hike:hover {
-//   background-color: rgba(255, 255, 255, 0.208)
-// }
 
 h4 {
   text-align: center;
@@ -361,11 +176,13 @@ h4 {
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   margin: 15px 15px;
 }
+
 #hikesHtml .card p {
   text-align: left;
   margin-left: 10px;
   margin-top: 10px;
 }
+
 .view-hike {
   width: 10rem;
   margin: 10px;
@@ -374,8 +191,6 @@ h4 {
 }
 
 #message {
-  // position: absolute;
-
   width: 100%;
   margin-bottom: 0;
   color: white;
@@ -384,14 +199,6 @@ h4 {
   overflow: hidden;
   box-sizing: border-box;
   transition: .5s;
-}
-
-
-#edit-hike {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 300px;
 }
 
 #showSingleHike, .card {
@@ -405,14 +212,17 @@ h4 {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
 }
+
 .card-text {
   text-align: center;
   margin-top: 10px;
 }
+
 .description {
   text-decoration: underline;
   font-size: 25px;
 }
+
 h5 {
   text-align: center;
   font-size: 30px;
@@ -425,46 +235,6 @@ h5 {
   background-color: #CFB680
 }
 
-//   transform: translate(-50%, -50%);
-//   background: rgba(0,0,0,.5);
-//   box-sizing: border-box;
-//   box-shadow: 0 15px 25px rgba(0,0,0,.6);
-//   border-radius: 10px;
-//   color: white;
-//   font-size: 20px;
-//   font-family: 'Bai Jamjuree', sans-serif;
-//   padding: 40px;
-// }
-
-// #showSingleHike h3 {
-//   margin: 0 0 30px;
-//   padding: 0;
-//   color: #fff;
-//   text-align: center;
-//   font-family: 'Bai Jamjuree', sans-serif;
-// }
-// #showSingleHike .user-box input {
-//   width: 100%;
-//   padding: 10px 0;
-//   font-size: 16px;
-//   color: #fff;
-//   margin-bottom: 30px;
-//   border: none;
-//   border-bottom: 1px solid #fff;
-//   outline: none;
-//   background: transparent;
-// }
-
-// #update-hike-button {
-//   border-radius: 25px;
-//   width: 150px;
-//   height: 50px;
-//   font-size: large;
-//   background: rgba(0,0,0,.5);
-//   color: white;
-//   display: inline-block;
-// }
-
-// #update-hike-button:hover {
-//   background-color: rgba(255, 255, 255, 0.208)
-// }
+.edit-hike:hover, .delete-hike:hover, .view-hike:hover {
+  background-color: #fee5c4a4;
+}
