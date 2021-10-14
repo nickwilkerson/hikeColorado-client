@@ -96,18 +96,21 @@ const changeView = function (event) {
     $('#hikeLogger').hide()
     $('#hikesHtml').hide()
     $('#showSingleHike').hide()
+    $('#edit-form').hide()
   } else if ($(this).hasClass('hikeLogger')) {
     $('#hikeLogger').show()
     $('#log-hike').show()
     $('#changePasswordBox').hide()
     $('#hikesHtml').hide()
     $('#showSingleHike').hide()
+    $('#edit-form').hide()
   } else if ($(this).hasClass('active')) {
     $('#log-hike').hide()
     $('#hikeLogger').hide()
     $('#changePasswordBox').hide()
     $('#hikesHtml').hide()
     $('#showSingleHike').hide()
+    $('#edit-form').hide()
     $('#message').text('')
   } else if ($(this).hasClass('viewHikes')) {
     $('#hikesHtml').show()
@@ -115,6 +118,7 @@ const changeView = function (event) {
     $('#hikeLogger').hide()
     $('#changePasswordBox').hide()
     $('#showSingleHike').hide()
+    $('#edit-form').hide()
   }
 }
 
